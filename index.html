@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    section {
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container-x1 p {
+      color: grey;
+      font-weight: 700;
+    }
+
+    .container-x1 input {
+      text-align: center;
+      height: 30px;
+      width: 80px;
+      margin-right: 20px;
+      font-weight: 900;
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .container-x1 img {
+      background: #874bff;
+    }
+
+    .solution-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    .solution-container h2 {
+      margin: 0px;
+      font-size: 40px;
+      font-weight: 800;
+    }
+
+    .solution-container span {
+      color: #874bff;
+    }
+
+
+    @media only screen and (max-width: 390px) {
+      .container-x1 {
+        border-radius: 30px;
+        padding: 5px;
+      }
+
+      .container-x1 img {
+        position: absolute;
+        margin-top: -36px;
+        border-radius: 30px;
+        padding: 15px;
+        height: 20px;
+      }
+
+      .date-flex {
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+      }
+
+      .container-x1 hr{
+        width: 70%;
+      }
+
+
+    }
+
+    @media only screen and (min-width: 391px) {
+      .container-x1 {
+        border-radius: 30px;
+        margin: 100px 0 100px 0;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+        height: 800px;
+        width: 790px;
+      }
+
+      .container-x1 hr{
+        color: aqua;
+      }
+
+      .date-flex {
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+      }
+
+      .img-container {
+        display: flex;
+        justify-content: right;
+        padding-right: 30px;
+        
+      }
+
+      .date-flex input {
+        font-size: 20px;
+      }
+
+     .container-x1 img { 
+        border-radius: 40px;
+        padding: 15px;
+        height: 40px;
+      }
+
+      .solution-container {
+        display: flex;
+        align-items: left;
+      }
+
+      .solution-container h2 {
+        font-size: 60px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="container-x1">
+      <div class="date-flex">
+        <div>
+          <p>DAY</p>
+          <input type="text" placeholder="DD" id="day">
+        </div>
+        <div>
+          <p>MONTH</p>
+          <input type="text" placeholder="MM" id="month">
+        </div>
+        <div>
+          <p>YEAR</p>
+          <input type="text" placeholder="YYYY" id="year">
+        </div>
+      </div>
+      <hr>
+      <div class="img-container">
+        <img onclick="myFunction()" src="./assets/images/icon-arrow.svg" alt="flecha">
+      </div>
+      <div class="solution-container">
+        <h2><span id="day">--</span> years</h2>
+        <h2><span id="month">--</span> months</h2>
+        <h2><span id="year">--</span> days</h2>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+      
+      
+  </script>
+</body>
+
+</html>
