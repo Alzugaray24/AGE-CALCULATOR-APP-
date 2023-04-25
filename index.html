@@ -47,8 +47,8 @@
     .solution-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
       padding-top: 20px;
+      margin-left: 40px;
     }
 
     .solution-container h2 {
@@ -57,8 +57,17 @@
       font-weight: 800;
     }
 
+    .data-container {
+      padding-right: 20px;
+    }
+
     .solution-container span {
       color: #874bff;
+    }
+
+    #errorDay, #errorDay2, #errorMonth, #errorMonth2, #errorYear, #errorYear2  {
+      color: red !important;
+      display: none;
     }
 
 
@@ -84,6 +93,12 @@
 
       .container-x1 hr{
         width: 70%;
+      }
+
+      .solution-container{
+        align-items: center;
+        margin: 0;
+
       }
 
 
@@ -142,17 +157,23 @@
   <section>
     <div class="container-x1">
       <div class="date-flex">
-        <div>
+        <div class="data-container">
           <p>DAY</p>
           <input type="text" placeholder="DD" id="day">
+          <p id="errorDay">This field is required</p>
+          <p id="errorDay2">Must be a valid day</p>
         </div>
-        <div>
+        <div class="data-container">
           <p>MONTH</p>
           <input type="text" placeholder="MM" id="month">
+          <p id="errorMonth">This field is required</p>
+          <p id="errorMonth2">Must be a valid month</p>
         </div>
-        <div>
+        <div class="data-container">
           <p>YEAR</p>
           <input type="text" placeholder="YYYY" id="year">
+          <p id="errorYear">This field is required</p>
+          <p id="errorYear2">The year must be in the past</p>
         </div>
       </div>
       <hr>
@@ -160,9 +181,9 @@
         <img onclick="myFunction()" src="./assets/images/icon-arrow.svg" alt="flecha">
       </div>
       <div class="solution-container">
-        <h2><span id="day">--</span> years</h2>
-        <h2><span id="month">--</span> months</h2>
-        <h2><span id="year">--</span> days</h2>
+        <h2><span id="years">--</span> years</h2>
+        <h2><span id="months">--</span> months</h2>
+        <h2><span id="days">--</span> days</h2>
       </div>
     </div>
   </section>
@@ -170,9 +191,62 @@
 
   <script>
      function myFunction() {
-  const inputDay = document.getElementById('day');
-  const inputValue = inputDay.value;
-  console.log(inputValue);
+     const inputDay = document.getElementById("day").value;
+     const inputMonth = document.getElementById("month").value;
+     const inputYear = document.getElementById("year").value;
+     
+     if(inputDay == "")
+     {
+      document.getElementById("errorDay").style.display = "block";
+      document.getElementById("errorDay").style.display = "block";
+      document.getElementById("errorDay2").style.display = "none";
+
+     }  else if (inputDay <= 0 || inputDay >= 32){
+       document.getElementById("errorDay").style.display = "none";
+       document.getElementById("errorDay2").style.display = "block";
+
+     } else if(inputDay == 31 && inputMonth == (1, 3, 5, 7, 8, 10, 12)) {
+        console.log("error");
+     }  
+     
+     else {
+       document.getElementById("days").innerHTML = inputDay;
+       document.getElementById("errorDay").style.display = "none";
+       document.getElementById("errorDay2").style.display = "none";
+     }
+
+     if(inputMonth == "")
+     {
+      document.getElementById("errorMonth").style.display = "block";
+      document.getElementById("errorMonth2").style.display = "none";
+
+     }  else if (inputMonth <= 0 || inputMonth >= 13){
+       document.getElementById("errorMonth").style.display = "none";
+       document.getElementById("errorMonth2").style.display = "block";
+
+     }
+     
+     else {
+       document.getElementById("months").innerHTML = inputMonth;
+       document.getElementById("errorMonth").style.display = "none";
+       document.getElementById("errorMonth2").style.display = "none";
+     }
+
+     if(inputYear == "")
+     {
+      document.getElementById("errorYear").style.display = "block";
+      document.getElementById("errorYear2").style.display = "none";
+
+     }  else if (inputYear > 2023){
+       document.getElementById("errorYear").style.display = "none";
+       document.getElementById("errorYear2").style.display = "block";
+
+     } else {
+       document.getElementById("years").innerHTML = inputYear;
+       document.getElementById("errorYear").style.display = "none";
+       document.getElementById("errorYear2").style.display = "none";
+     }
+  
 }
       
   </script>
